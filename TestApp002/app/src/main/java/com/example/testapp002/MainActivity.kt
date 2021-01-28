@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
 import android.widget.Button
+import android.widget.TextView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
         val preferences = getSharedPreferences("database", Context.MODE_PRIVATE)
         val savedName = preferences.getString("savedProductName","this value doesn't exist")
-        d("ying","saved message is: $savedName")
+        //d("ying","saved message is: $savedName")
+
+        findViewById<TextView>(R.id.LastSavedProduct).text = "last saved item: $savedName"
     }
 }
